@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 
 const autoMiddleware = (req, res, next) => {
   const autoHeader = req.headers.authorization;
-  if (!autoHeader || !autoHeader.startswith("Bearer ")) {
+  if (!autoHeader || !autoHeader.startsWith("Bearer ")) {
     return res.status(403).json({});
   }
   const token = autoHeader.split(" ")[1];
